@@ -3,6 +3,6 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  form(action="/", method = "POST")
-    input(type="email", placeholder="Enter your email here")
+  form(action="/landing", method = "POST")
+    input(name="lead_email", type="email", placeholder="Enter your email here")
     button(type="submit") Submit
