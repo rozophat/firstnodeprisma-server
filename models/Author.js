@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       defaultValue: DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true
     },
@@ -13,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     age: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true
     }
     

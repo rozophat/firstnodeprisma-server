@@ -1,10 +1,9 @@
 /* jshint indent: 2 */
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Book = sequelize.define('Book', {
+  var Book = sequelize.define('Book1', {
     id: {
       type: DataTypes.INTEGER,
-      defaultValue: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true
