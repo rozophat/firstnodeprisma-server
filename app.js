@@ -1,5 +1,13 @@
 var createError = require('http-errors');
+const graphql = require("graphql");
 var express = require('express');
+
+//GraphQL Declaration
+const expressGraphQl = require("express-graphql");
+const { GraphQLSchema } = graphql;
+const { query } = require("./schemas/queries");
+const { mutation } = require("./schemas/mutations");
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -11,7 +19,20 @@ var usersRouter = require('./routes/users');
 let flash = require('connect-flash')
 require('./passport_setup')(passport);
 
+const schema = new GraphQLSchema({
+  query,
+  mutation
+});
+
 var app = express();
+
+app.use(
+  '/graph',
+  expressGraphQl({
+    schema: schema,
+    graphiql: true
+  })
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

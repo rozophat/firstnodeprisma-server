@@ -63,7 +63,6 @@ exports.signup = function(req, res, next) {
           })(req, res, next);
         })
       })
-      
     }
   })
 }
