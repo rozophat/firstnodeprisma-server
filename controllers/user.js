@@ -2,7 +2,9 @@ let models = require("../models");
 let bcrypt = require("bcrypt");
 const passport = require("passport");
 const myPassport = require("../passport_setup")(passport); 
-let flash = require("connect-flash");
+// const flash = require("connect-flash");
+import flash from ("connect-flash");
+
 
 exports.show_login = function(req, res, next) {
     res.render('user/login', { formData: {}, errors:{} });
