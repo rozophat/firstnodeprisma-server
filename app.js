@@ -8,6 +8,7 @@ let session = require('express-session');
 var indexRouter = require('./routes/index');
 var landingRouter = require('./routes/landing');
 var usersRouter = require('./routes/users');
+let flash = require('connect-flash')
 require('./passport_setup')(passport);
 
 var app = express();
@@ -15,7 +16,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
+app.use(flash())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
