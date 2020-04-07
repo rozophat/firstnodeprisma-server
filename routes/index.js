@@ -4,6 +4,8 @@ var router = express.Router();
 let index = require('../controllers/index');
 let user = require('../controllers/user');
 
+let {isLoggedIn} = require('../middleware/hasAuth');
+
 router.get('/login', user.show_login);
 router.get('/signup', user.show_signup);
 router.post('/login', user.login);
