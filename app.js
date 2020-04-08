@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 const graphql = require("graphql");
 var express = require('express');
+var cors = require('cors');
 
 //GraphQL Declaration
 const expressGraphQl = require("express-graphql");
@@ -25,6 +26,9 @@ const schema = new GraphQLSchema({
 });
 
 var app = express();
+
+// allow cross-origin requests
+app.use(cors());
 
 app.use(
   '/graph',

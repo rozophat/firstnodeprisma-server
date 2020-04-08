@@ -58,7 +58,7 @@ const AuthorType = new GraphQLObjectType({
         type: new GraphQLList(BookType),
         resolve(parent, args){
           //return books.filter(book => book.authorId === parent.id)
-          return models.Book.findAll({
+          return models.Book1.findAll({
             where : {
               authorId: parent.id
             }
