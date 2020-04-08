@@ -6,6 +6,8 @@ module.exports = {
     "host": "ec2-52-71-85-210.compute-1.amazonaws.com",
     "dialect": "postgres",
     "port": 5432,
+    "ssl":true,
+    "dialectOptions": {"ssl": true}
   },
   "test": {
     "username": "root",
