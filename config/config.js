@@ -7,7 +7,7 @@ module.exports = {
     "dialect": "postgres",
     "port": 5432,
     "ssl":true,
-    "dialectOptions": {"ssl": true}
+    "dialectOptions": {"ssl": true},
   },
   "test": {
     "username": "root",
