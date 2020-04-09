@@ -2,8 +2,8 @@
     "version": 2,
     "builds": [
       {
-        "src": "*.js",
-        "use": "@now/node-server"
+        "src": "app.js",
+        "use": "@now/node-server@canary"
       }
     ]
   }
