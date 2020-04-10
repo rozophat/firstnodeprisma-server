@@ -54,6 +54,7 @@ if (config.use_env_variable) {
 
 db['Author'] = sequelize['import'](path.join(__dirname, './Author.js'));
 db['Book'] = sequelize['import'](path.join(__dirname, './Book.js'));
+db['Book1'] = sequelize['import'](path.join(__dirname, './Book1.js'));
 db['Lead'] = sequelize['import'](path.join(__dirname, './Lead.js'));
 db['User'] = sequelize['import'](path.join(__dirname, './User.js'));
 
