@@ -1,19 +1,19 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "app.js",
-        "use": "@now/node-server@canary"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/app.js"
-      },
-      {
-        "src": "/(.*)/(.*)",
-        "dest": "/app.js"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@now/node-server@canary"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    },
+    {
+      "src": "/(.*)/(.*)",
+      "dest": "/app.js"
+    }
+  ]
+}
