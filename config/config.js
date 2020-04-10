@@ -36,12 +36,12 @@ module.exports = {
   //   "dialect": "mysql",
   //   "operatorsAliases": false
   // },
-  // "production": {
-  //   "username": "root",
-  //   "password": null,
-  //   "database": "database_production",
-  //   "host": "127.0.0.1",
-  //   "dialect": "mysql",
-  //   "operatorsAliases": false
-  // }
+  "production": {
+    "username": "vfddtytj",
+    "password": 'sR6XGimnBX0MsXOP8lZpKfl_MtQMcN4x',
+    "database": "vfddtytj",
+    "host": "satao.db.elephantsql.com",
+    "dialect": "postgres",
+    "port": 5432,
+  }
 }
