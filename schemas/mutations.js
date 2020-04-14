@@ -1,8 +1,7 @@
 const graphql = require("graphql");
-//const db = require("../pgAdaptor").db;
 const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLInt } = graphql;
 const { BookType, AuthorType } = require("./types");
-const models = require("../models");
+const {prisma} = require("../prisma/generated/prisma-client");
 
 const RootMutation = new GraphQLObjectType({
   name: "RootMutationType",
@@ -15,26 +14,12 @@ const RootMutation = new GraphQLObjectType({
         genre: { type: GraphQLString },
         authorId: {type: GraphQLInt}
       },
-      resolve(parentValue, args) {
-        // const query = `INSERT INTO project(creator_id, created, title, description) VALUES ($1, $2, $3, $4) RETURNING title`;
-        // const values = [
-        //   args.creatorId,
-        //   new Date(),
-        //   args.title,
-        //   args.description
-        // ];
-
-        // return db
-        //   .one(query, values)
-        //   .then(res => res)
-        //   .catch(err => err);
-        
-        var newBook = models.Book1.build({
-            name: args.name,
-            genre: args.genre,
-            authorId: args.authorId,
-          });
-        return newBook.save();
+      resolve(parentValue, args){
+        return prisma.createBook1({
+          name: args.name,
+          genre: args.genre,
+          authorId: args.authorId
+        });
       }
     },
     addAuthor: {
@@ -42,15 +27,13 @@ const RootMutation = new GraphQLObjectType({
         args: {
           id: { type: GraphQLID },
           name: { type: GraphQLString },
-          age: { type: GraphQLInt }
+          age: { type: GraphQLString }
         },
         resolve(parentValue, args) {
-          
-          var newAuthor = models.Author.build({
-              name: args.name,
-              age: args.age
-            });
-          return newAuthor.save();
+          return prisma.createAuthor({
+            name: args.name,
+            age: args.age
+          });
         }
       }
   }

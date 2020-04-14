@@ -1,0 +1,42 @@
+type Author @db(name: "Authors") {
+  id: Int! @id(strategy: SEQUENCE) @sequence(name: "Authors_id_seq", initialValue: 20, allocationSize: 100)
+  age: String
+  createdAt: DateTime! @createdAt
+  name: String
+  updatedAt: DateTime! @updatedAt
+}
+
+type Book @db(name: "Books") {
+  id: Int! @id
+  authorId: Int
+  genre: String
+  name: String
+}
+
+type Book1 @db(name: "Book1s") {
+  id: Int! @id(strategy: SEQUENCE) @sequence(name: "Book1s_id_seq", initialValue: 20, allocationSize: 100)
+  authorId: Int
+  createdAt: DateTime! @createdAt
+  genre: String
+  name: String
+  updatedAt: DateTime! @updatedAt
+}
+
+type Lead @db(name: "Leads") {
+  id: UUID! @id
+  email: String!
+}
+
+type SequelizeMeta {
+  name: ID! @id
+}
+
+type User @db(name: "Users") {
+  id: UUID! @id
+  email: String! @unique
+  firstname: String
+  isAdmin: Boolean @db(name: "is_admin")
+  lastname: String
+  password: String
+  username: String
+}
